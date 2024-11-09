@@ -2,7 +2,7 @@
 
 A trainable PyTorch reproduction of [AlphaFold 3](https://www.nature.com/articles/s41586-024-07487-w).
 
-Technical Report will be released soon.
+For more information on the model's performance and capabilities, see our [technical report](Protenix_Technical_Report.pdf).
 
 ![Protenix predictions](assets/protenix_predictions.gif)
 
