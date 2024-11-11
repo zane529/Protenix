@@ -38,7 +38,7 @@ Ensure that Docker is installed and configured with GPU support. Follow these st
 
 1. Run Docker with an interactive shell
     ```bash
-    docker run --gpus all -it -v $(pwd):/workspace ai4s-cn-beijing.cr.volces.com/infra/protenix:v0.0.1 /bin/bash
+    docker run --gpus all -it -v $(pwd):/workspace -v /dev/shm:/dev/shm ai4s-cn-beijing.cr.volces.com/infra/protenix:v0.0.1 /bin/bash
     ```
   
   After running above commands, you’ll be inside the container’s environment and can execute commands as you would on a normal Linux terminal.
@@ -114,6 +114,7 @@ Arguments in this scripts are explained as follows:
 * `dump_dir`: path to a directory where the results of the inference will be saved. 
 * `dtype`: data type used in inference. Valid options include `"bf16"` and `"fp32"`. 
 * `use_deepspeed_evo_attention`: whether use the EvoformerAttention provided by DeepSpeed.
+* `use_msa`: whether to use the MSA feature, the default is true. If you want to disable the MSA feature, add `--use_msa false` to the [inference_demo.sh](inference_demo.sh) script.
 
 **Detailed information on the format of the input JSON file and the output files can be found [here](runner/infer_json_format.md)**.
 
