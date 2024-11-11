@@ -63,7 +63,16 @@ Ensure that Docker is installed and configured with GPU support. Follow these st
 
 
 ### Preparing the datasets
-Note: We will release the training dataset soon.
+To download the [wwPDB dataset](https://www.wwpdb.org/) and proprecessed training data, you need at least 1T disk space.
+
+Use the following command to download the preprocessed wwpdb training databases:
+
+```bash
+wget -P /af3-dev/release_data/ https://af3-dev.tos-cn-beijing.volces.com/release_data.tar.gz
+tar -xzvf /af3-dev/release_data/release_data.tar.gz -C /af3-dev/release_data/
+rm /af3-dev/release_data/release_data.tar.gz
+```
+
 
 The data should be placed in the `/af3-dev/release_data/` directory. You can also download it to a different directory, but remember to modify the `DATA_ROOT_DIR` in [configs/configs_data.py](configs/configs_data.py) correspondingly.  Data hierarchy after extraction is as follows:
 
