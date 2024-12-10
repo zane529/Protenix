@@ -63,6 +63,17 @@ default_weighted_pdb_configs = {
 
 DATA_ROOT_DIR = "/af3-dev/release_data/"
 
+algorithm_name = os.getenv("algorithm_name", None)
+algorithm_version = os.getenv("algorithm_version", None)
+DATA_ROOT_DIR = "/fsx/%s/%s/release_data/" % (algorithm_name, algorithm_version)
+
+if algorithm_name and algorithm_version:
+    DATA_ROOT_DIR = "/fsx/%s/%s/release_data/" % (algorithm_name, algorithm_version)
+else:
+    DATA_ROOT_DIR = "/af3-dev/release_data/"
+
+print("Using data from", DATA_ROOT_DIR)
+
 data_configs = {
     "num_dl_workers": 16,
     "epoch_size": 10000,
